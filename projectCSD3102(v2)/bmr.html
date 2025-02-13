@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMR Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            text-align: center;
+            padding: 20px;
+        }
+        .header {
+            background-color: #d3c4ba;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            margin-top: 20px;
+            text-align: left;
+        }
+        button {
+            background-color: #6d625f;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin-top: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #554b48;
+        }
+        input, select {
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            width: 95%;
+        }
+        .goal-section {
+            background: #f8e1dd;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            margin: 20px;
+            font-size: 18px;
+        }
+        .bmr-result {
+            font-size: 20px;
+            font-weight: bold;
+            color: #6d625f;
+            margin-top: 10px;
+        }
+        .contact-btn {
+            background: #8b4513;
+            padding: 12px 20px;
+            border-radius: 8px;
+            color: white;
+            font-size: 18px;
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>วันนี้คุณกินข้าวหรือยัง ?</h1>
+    </div>
+
+    <!-- Goal section where users can input their target weight and height -->
+    <div class="goal-section">
+        <h3>เป้าหมายสุขภาพของฉัน</h3>
+        <label for="goalWeight">น้ำหนักเป้าหมาย (kg):</label>
+        <input type="number" id="goalWeight" placeholder="น้ำหนักเป้าหมายของคุณ (kg)" required>
+        
+        <label for="goalHeight">ส่วนสูงเป้าหมาย (cm):</label>
+        <input type="number" id="goalHeight" placeholder="ส่วนสูงเป้าหมายของคุณ (cm)" required>
+        
+        <button onclick="setGoal()">ตั้งเป้าหมาย</button>
+        <p id="goalResult"></p>
+    </div>
+
+    <!-- BMR Calculator section -->
+    <div class="container">
+        <h2>Calculate Your BMR</h2>
+        <label>เพศ:</label>
+        <select id="gender">
+            <option value="male">ชาย</option>
+            <option value="female">หญิง</option>
+        </select>
+        <input type="number" id="weight" placeholder="น้ำหนักของคุณ (kg)" required>
+        <input type="number" id="height" placeholder="ส่วนสูงของคุณ (cm)" required>
+        <input type="number" id="age" placeholder="อายุของคุณ (ปี)" required>
+        
+        <button onclick="calculateBMR()">BMR calculate</button>
+        <p class="bmr-result" id="bmrResult">ผลลัพธ์ที่คำนวณได้จากสูตร BMR</p>
+    </div>
+
+    <button onclick="contactMe()" class="contact-btn">contact me</button>
+
+    <script>
+        // Function to calculate BMR
+        function calculateBMR() {
+            let gender = document.getElementById('gender').value;
+            let weight = parseFloat(document.getElementById('weight').value);
+            let height = parseFloat(document.getElementById('height').value);
+            let age = parseFloat(document.getElementById('age').value);
+            let bmr;
+            
+            if (gender === 'male') {
+                bmr = 10 * weight + 6.25 * height - 5 * age + 5;
+            } else {
+                bmr = 10 * weight + 6.25 * height - 5 * age - 161;
+            }
+            
+            document.getElementById('bmrResult').innerText = `${bmr.toFixed(1)} kcal/day`;
+        }
+
+        // Function to set user health goal
+        function setGoal() {
+            let goalWeight = document.getElementById('goalWeight').value;
+            let goalHeight = document.getElementById('goalHeight').value;
+
+            if (goalWeight && goalHeight) {
+                document.getElementById('goalResult').innerText = `เป้าหมายสุขภาพ: น้ำหนัก ${goalWeight} kg, ส่วนสูง ${goalHeight} cm`;
+            } else {
+                document.getElementById('goalResult').innerText = 'กรุณากรอกข้อมูลทั้งหมด';
+            }
+        }
+
+        // Function to display contact information
+        function contactMe() {
+            alert('ติดต่อผมผ่านอีเมล: s65122250014@ssru.ac.th ได้เลยครับ');
+        }
+    </script>
+</body>
+</html>
