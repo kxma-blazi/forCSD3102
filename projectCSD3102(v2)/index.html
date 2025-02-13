@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthFuel - Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="header">
+        <img src="\KUMA.png" alt="HealthFuel Logo" class="header-logo" align-items= "center">
+        <h1>HealthFuel</h1>
+    </div>
+    <!-- Sign Up Section -->
+    <div class="container" id="signupPage">
+        <div class="logo-container">
+            <p><b>Sign up to create an account</b></p>
+        </div>
+        <input type="text" id="username" placeholder="Enter your username" required> 
+        <input type="email" id="email" placeholder="Enter your email" required>
+        <input type="password" id="password" placeholder="Create a strong password" required>
+        
+        <div class="button-group">
+            <button class="login" onclick="goToLogin()">Log In</button>
+            <button class="signup" onclick="signUp()">Sign Up</button>
+        </div>
+    </div>
+
+    <!-- ปุ่มติดต่อฉัน -->
+    <button class="contact-btn" onclick="window.location.href='contact.html'">ช่องทางติดต่อผู้พัฒนา</button>
+    <script src="script.js"></script>                                                 
+</body>
+</html>
