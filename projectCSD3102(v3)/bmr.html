@@ -20,14 +20,27 @@
             font-size: 24px;
             font-weight: bold;
         }
+        .main-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-top: 20px;
+        }
         .container {
             background: white;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-            display: inline-block;
-            margin-top: 20px;
             text-align: left;
+            flex-basis: 48%;
+        }
+        .goal-section {
+            background: #f8e1dd;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+            font-size: 18px;
+            flex-basis: 48%;
         }
         button {
             background-color: #6d625f;
@@ -50,15 +63,6 @@
             border: 1px solid #ccc;
             font-size: 16px;
             width: 95%;
-        }
-        .goal-section {
-            background: #f8e1dd;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-            display: inline-block;
-            margin: 20px;
-            font-size: 18px;
         }
         .bmr-result {
             font-size: 20px;
@@ -86,33 +90,35 @@
         <h1>วันนี้คุณกินข้าวหรือยัง ?</h1>
     </div>
 
-    <!-- Goal section where users can input their target weight and height -->
-    <div class="goal-section">
-        <h3>เป้าหมายสุขภาพของฉัน</h3>
-        <label for="goalWeight">น้ำหนักเป้าหมาย (kg):</label>
-        <input type="number" id="goalWeight" placeholder="น้ำหนักเป้าหมายของคุณ (kg)" required>
-        
-        <label for="goalHeight">ส่วนสูงเป้าหมาย (cm):</label>
-        <input type="number" id="goalHeight" placeholder="ส่วนสูงเป้าหมายของคุณ (cm)" required>
-        
-        <button onclick="setGoal()">ตั้งเป้าหมาย</button>
-        <p id="goalResult"></p>
-    </div>
+    <div class="main-container">
+        <!-- Goal section where users can input their target weight and height -->
+        <div class="goal-section">
+            <h3>เป้าหมายสุขภาพของฉัน</h3>
+            <label for="goalWeight">น้ำหนักเป้าหมาย (kg):</label>
+            <input type="number" id="goalWeight" placeholder="น้ำหนักเป้าหมายของคุณ (kg)" required>
+            
+            <label for="goalHeight">ส่วนสูงเป้าหมาย (cm):</label>
+            <input type="number" id="goalHeight" placeholder="ส่วนสูงเป้าหมายของคุณ (cm)" required>
+            
+            <button onclick="setGoal()">ตั้งเป้าหมาย</button>
+            <p id="goalResult"></p>
+        </div>
 
-    <!-- BMR Calculator section -->
-    <div class="container">
-        <h2>Calculate Your BMR</h2>
-        <label>เพศ:</label>
-        <select id="gender">
-            <option value="male">ชาย</option>
-            <option value="female">หญิง</option>
-        </select>
-        <input type="number" id="weight" placeholder="น้ำหนักของคุณ (kg)" required>
-        <input type="number" id="height" placeholder="ส่วนสูงของคุณ (cm)" required>
-        <input type="number" id="age" placeholder="อายุของคุณ (ปี)" required>
-        
-        <button onclick="calculateBMR()">BMR calculate</button>
-        <p class="bmr-result" id="bmrResult">ผลลัพธ์ที่คำนวณได้จากสูตร BMR</p>
+        <!-- BMR Calculator section -->
+        <div class="container">
+            <h2>Calculate Your BMR</h2>
+            <label>เพศ:</label>
+            <select id="gender">
+                <option value="male">ชาย</option>
+                <option value="female">หญิง</option>
+            </select>
+            <input type="number" id="weight" placeholder="น้ำหนักของคุณ (kg)" required>
+            <input type="number" id="height" placeholder="ส่วนสูงของคุณ (cm)" required>
+            <input type="number" id="age" placeholder="อายุของคุณ (ปี)" required>
+            
+            <button onclick="calculateBMR()">BMR calculate</button>
+            <p class="bmr-result" id="bmrResult">ผลลัพธ์ที่คำนวณได้จากสูตร BMR</p>
+        </div>
     </div>
 
     <button onclick="contactMe()" class="contact-btn">contact me</button>
