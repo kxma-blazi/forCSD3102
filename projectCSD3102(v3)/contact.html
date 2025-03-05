@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .contact-container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgb(0, 0, 0);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        h1 {
+            color: #8B4513; /* สีน้ำตาล */
+            text-align: center;
+            width: 100%;
+        }
+
+        .contact-method {
+            margin-bottom: 20px;
+            width: 60%;
+        }
+
+        .contact-method h2 {
+            color: #8B4513; /* สีน้ำตาล */
+        }
+
+        .contact-method p {
+            font-size: 16px;
+        }
+
+        .contact-method a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .contact-method a:hover {
+            text-decoration: underline;
+        }
+
+        .qr-image {
+            width: 30%; /* กำหนดขนาดของ QR code */
+            text-align: center;
+        }
+
+        .qr-image img {
+            max-width: 100%; /* ให้ภาพไม่ขยายเกินขนาด */
+            height: auto;
+            border: 1px solid #ddd; /* เพิ่มขอบให้ภาพ */
+            border-radius: 8px;
+        }
+
+        .back-btn {
+            background-color: #8B4513;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        .back-btn:hover {
+            background-color: #6B3F2C;
+        }
+    </style>
+</head>
+<body>
+    <div class="contact-container">
+        <!-- ช่องติดต่อ -->
+        <div class="contact-method">
+            <button class="back-btn" onclick="window.location.href='index.html'">ย้อนกลับ</button>
+            <h1>ติดต่อฉัน</h1>
+            <p>หากคุณมีคำถามหรือข้อสงสัย สามารถติดต่อผมได้ผ่านช่องทางต่างๆ ดังนี้:</p>
+            
+            <div class="contact-method">
+                <h2>อีเมล</h2>
+                <p><a href="mailto:okumakung2018@gmail.com">okumakung2018@gmail.com</a></p>
+            </div>
+
+            <div class="contact-method">
+                <h2>โทรศัพท์</h2>
+                <p><a href="tel:096-618-0331">096-618-0331</a></p>
+            </div>
+
+            <div class="contact-method">
+                <h2>Facebook</h2>
+                <p><a href="https://www.facebook.com/kxma.blazi/" target="_blank">kxma.blazi</a></p>
+            </div>
+
+            <div class="contact-method">
+                <h2>Instagram</h2>
+                <p><a href="https://www.instagram.com/kxma.blazi/" target="_blank">kxma.blazi</a></p>
+            </div>
+            <button class="back-btn" onclick="window.location.href='index.html'">ย้อนกลับ</button>
+        </div>
+
+        <!-- ช่องแสดง QR code สำหรับการบริจาค -->
+        <div class="qr-image">
+            <h2>สนับสนุนเรา</h2>
+            <p>ช่องทางสแกน QR Code เพื่อให้ค่าขนม</p>
+            <img src="QR_code.jpg" alt="QR Code for Donation">
+        </div>
+    </div>
+</body>
+</html>

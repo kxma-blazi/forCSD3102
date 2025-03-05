@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthFuel - Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* สไตล์สำหรับ Dark Mode */
+        .dark-mode {
+            background-color: #121212;
+            color: #e92c2c;
+        }
+        .dark-mode .container {
+            background: #1e1e1e;
+            border: 1px solid #ffffff33;
+        }
+        .dark-mode button {
+            background: #444;
+            color: white;
+        }
+        /* ปุ่ม Toggle Dark Mode */
+        #toggleDarkMode {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            padding: 10px 15px;
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <button id="toggleDarkMode">🌙 Toggle Dark Mode</button>
+    <div class="container">
+        <img src="\KUMA.png" alt="HealthFuel Logo" class="header-logo" align-items= "center">
+        <h1>HealthFuel</h1>
+    </div>
+    <!-- Sign Up Section -->
+    <div class="container" id="signupPage">
+        
+        <div class="logo-container">
+            <p><b>Sign up to create an account</b></p>
+        </div>
+        <input type="text" id="username" placeholder="Enter your username" required> 
+        <input type="email" id="email" placeholder="Enter your email" required>
+        <input type="password" id="password" placeholder="Create a strong password" required>
+        
+        <div class="button-group">
+            <button class="login" onclick="goToLogin()">Log In</button>
+            <button class="signup" onclick="signUp()">Sign Up</button>
+        </div>
+    </div>
+    <!-- ปุ่มติดต่อฉัน -->
+    <button class="contact-btn" onclick="window.location.href='.\contact.html'">ช่องทางติดต่อผู้พัฒนา</button>
+    
+    <script>
+        document.getElementById('toggleDarkMode').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            localStorage.setItem('darkMode', isDark);
+        });
+        
+        window.onload = function() {
+            if (localStorage.getItem('darkMode') === 'true') {
+                document.body.classList.add('dark-mode');
+            }
+        };
+        
+        function goToLogin() {
+            window.location.href = 'bmr.html';
+        }
+    </script>
+</body>
+</html>
